@@ -1,0 +1,64 @@
+:global {
+  body[data-theme="light"] {
+    --phonetic-main-word: var(--black);
+    --phonetic-word: var(--main-color);
+  }
+
+  body[data-theme="dark"] {
+    --phonetic-main-word: var(--white);
+    --phonetic-word: var(--main-color);
+  }
+}
+
+.wordCardPhonetic {
+  margin-top: 52px;
+  width: 100%;
+  height: 107px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .word {
+    display: flex;
+    justify-content: start;
+    align-content: start;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+    grid-column: 1/2;
+    color: var(--phonetic-main-word);
+  }
+  h3 {
+    margin-top: 11px;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    position: relative;
+    color: var(--phonetic-word);
+  }
+  .smth {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .playIcon {
+    bottom: 330px;
+    right: 391px;
+    position: absolute;
+    cursor: pointer;
+    &:hover {
+      circle {
+        opacity: 100;
+        transition: 0.3s;
+      }
+      path {
+        fill: #fff;
+        transition: 0.3s;
+      }
+    }
+  }
+}

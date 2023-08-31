@@ -1,0 +1,69 @@
+:global {
+  body[data-theme="light"] {
+    --search-bg: var(--gray-50);
+    --search-color: var(--gray-300);
+    --search-placeholder-color: var(--gray-200);
+    --search-shadow: var(--shadow);
+    --search-error-color: var(--black);
+  }
+
+  body[data-theme="dark"] {
+    --search-bg: var(--gray-400);
+    --search-color: var(--white);
+    --search-placeholder-color: var(--white);
+    --search-shadow: unset;
+    --search-error-color: var(--white);
+  }
+}
+
+.search {
+  position: relative;
+  width: 100%;
+  height: 64px;
+  overflow: hidden;
+  margin-top: 40px;
+  padding: 10px 10px 10px 16px;
+  background-color: var(--search-bg, white);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: var(--search-shadow);
+  border-radius: 15px;
+}
+
+.lable {
+  cursor: pointer;
+}
+
+.textField {
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 0 10px;
+  flex-grow: 5;
+  height: 60px;
+  max-width: calc(100% - 100px - 20px);
+  border: none;
+  color: var(--search-color);
+  line-height: 1.5;
+  cursor: pointer;
+  background-color: var(--search-bg);
+
+  &::placeholder {
+    color: var(--search-placeholder-color);
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+.searchIcon {
+  cursor: pointer;
+}
+
+.error {
+  text-align: center;
+  margin-top: 100px;
+  color: var(--search-error-color);
+}
