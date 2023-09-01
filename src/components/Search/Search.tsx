@@ -1,7 +1,7 @@
-import { ReactFragment } from "react";
 import styles from "./Search.module.scss";
 import { ReactComponent as SearchIcon } from "assets/images/icon-search.svg";
 import { ErrorComponent } from "components/ErrorComponent";
+import { WordTypeError } from "types/word";
 
 interface SearchProps {
   hasError: boolean;
@@ -9,7 +9,7 @@ interface SearchProps {
 }
 
 type FormFields = {
-  username: HTMLInputElement;
+  word: HTMLInputElement;
 };
 
 export const Search = ({ hasError, onSubmit }: SearchProps) => {
@@ -17,7 +17,7 @@ export const Search = ({ hasError, onSubmit }: SearchProps) => {
     event: React.FormEvent<HTMLFormElement & FormFields>
   ) => {
     event.preventDefault();
-    const text = event.currentTarget.username.value;
+    const text = event.currentTarget.word.value;
     if (text.trim()) {
       onSubmit(text);
       event.currentTarget.reset();

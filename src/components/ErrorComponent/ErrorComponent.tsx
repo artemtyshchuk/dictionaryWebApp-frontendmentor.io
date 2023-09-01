@@ -1,4 +1,7 @@
+import { WordTypeError } from "types/word";
 import styles from "./ErrorComponent.module.scss";
+
+interface ErrorComponentProps {}
 
 export const ErrorComponent = () => {
   return (

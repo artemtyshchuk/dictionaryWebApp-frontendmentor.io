@@ -23,3 +23,8 @@ export type WordType = {
   phonetics: Phonetics[];
   meanings: Meaning[];
 };
+
+export type WordTypeError = {
+  title: string;
+  message: string;
+};
