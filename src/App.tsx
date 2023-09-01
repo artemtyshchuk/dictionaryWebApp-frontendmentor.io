@@ -6,7 +6,6 @@ import { useState } from "react";
 import { WordType, WordTypeError } from "types/word";
 import { defaultWord } from "mock";
 import { isWord } from "utils/typeGuard";
-import { extractLocalWord } from "utils/extract-local-word";
 
 const BASE_URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
@@ -19,7 +18,7 @@ function App() {
     const res = await fetch(url);
     const word = (await res.json()) as WordType | WordTypeError;
     if (isWord(word)) {
-      setWord(extractLocalWord(word));
+      setWord(word);
     } else {
       setWord(null);
     }

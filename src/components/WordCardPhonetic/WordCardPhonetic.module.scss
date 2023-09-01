@@ -46,9 +46,7 @@
     width: 100%;
   }
   .playIcon {
-    bottom: 150px;
-    right: 391px;
-    position: absolute;
+    position: static;
     cursor: pointer;
     &:hover {
       circle {
