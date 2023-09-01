@@ -76,6 +76,8 @@
   .synonyms {
     margin-top: 64px;
     display: flex;
+    flex-wrap: wrap;
+    display: flex;
     align-content: start;
   }
   .synonymsTitle {
@@ -98,6 +100,8 @@
     margin-top: 64px;
     display: flex;
     align-content: start;
+    display: flex;
+    flex-wrap: wrap;
   }
   .antonymsTitle {
     font-size: 20px;

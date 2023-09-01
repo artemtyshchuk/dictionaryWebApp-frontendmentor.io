@@ -16,13 +16,24 @@ function App() {
     const url = BASE_URL + theWord;
 
     const res = await fetch(url);
-    const word = (await res.json()) as WordType | WordTypeError;
-    if (isWord(word)) {
-      setWord(word);
+    const words = (await res.json()) as (WordType | WordTypeError)[];
+
+    // Проверяем, что API вернуло хотя бы один элемент
+    if (words.length > 0) {
+      // Выбираем первый элемент массива (может потребоваться более сложная логика выбора)
+      const selectedWord = words[0];
+
+      if (isWord(selectedWord)) {
+        setWord(selectedWord);
+      } else {
+        setWord(null);
+      }
     } else {
+      // Если API не вернуло ни одного элемента, устанавливаем word в null
       setWord(null);
     }
   };
+
   return (
     <Container>
       <TheHeader />

@@ -22,18 +22,21 @@ export const WordCardPhonetic = ({
     audioElement.play();
   };
 
+  // Выбираем первый элемент из массива phonetics, если он существует
+  const firstPhonetic = phonetics[0];
+
   return (
     <div className={styles.wordCardPhonetic}>
       <h1 className={styles.word}>{word}</h1>
-      {phonetics.map((phonetic, index) => (
-        <div key={index} className={styles.smth}>
-          <h3>{phonetic.text}</h3>
+      {firstPhonetic && (
+        <div className={styles.smth}>
+          <h3>{firstPhonetic.text}</h3>
           <PlayIcon
             className={styles.playIcon}
-            onClick={() => playAudio(phonetic.audio)}
+            onClick={() => playAudio(firstPhonetic.audio)}
           />
         </div>
-      ))}
+      )}
     </div>
   );
 };
