@@ -18,9 +18,7 @@ function App() {
     const res = await fetch(url);
     const words = (await res.json()) as (WordType | WordTypeError)[];
 
-    // Проверяем, что API вернуло хотя бы один элемент
     if (words.length > 0) {
-      // Выбираем первый элемент массива (может потребоваться более сложная логика выбора)
       const selectedWord = words[0];
 
       if (isWord(selectedWord)) {
@@ -29,7 +27,6 @@ function App() {
         setWord(null);
       }
     } else {
-      // Если API не вернуло ни одного элемента, устанавливаем word в null
       setWord(null);
     }
   };

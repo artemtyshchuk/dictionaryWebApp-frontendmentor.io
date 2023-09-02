@@ -1,7 +1,6 @@
 import styles from "./Search.module.scss";
 import { ReactComponent as SearchIcon } from "assets/images/icon-search.svg";
 import { ErrorComponent } from "components/ErrorComponent";
-import { WordTypeError } from "types/word";
 
 interface SearchProps {
   hasError: boolean;

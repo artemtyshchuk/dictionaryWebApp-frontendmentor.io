@@ -1,1 +1,92 @@
-.fontSwitcher {}
+:global {
+  body[data-theme="light"] {
+    --fontswitcher-text: var(--black);
+    --fontswitcher-box: var(--gray-50);
+    --fontswitcher-shadow: var(--shadow);
+  }
+
+  body[data-theme="dark"] {
+    --fontswitcher-text: var(--white);
+    --fontswitcher-box: var(--gray-400);
+    --fontswitcher-shadow: var(--shadow-pink);
+  }
+}
+
+.fontSwitcher {
+  display: inline-block;
+  position: relative;
+  margin-right: 15px;
+}
+.font {
+  display: inline;
+  color: var(--fontswitcher-text);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  cursor: pointer;
+  position: static;
+}
+.arrow {
+  position: static;
+  top: 4px;
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.fontBlock {
+  position: absolute;
+  z-index: 2;
+  left: -72px;
+  margin-top: 18px;
+  width: 183px;
+  height: 152px;
+  border-radius: 16px;
+  background: var(--fontswitcher-box);
+  box-shadow: var(--fontswitcher-shadow);
+}
+
+.fontBlockSansSerif {
+  color: var(--fontswitcher-text);
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  padding-left: 24px;
+  padding-top: 24px;
+  cursor: pointer;
+  &:hover {
+    color: var(--main-color);
+  }
+}
+
+.fontBlockSerif {
+  color: var(--fontswitcher-text);
+  font-family: "Lora", serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  padding-left: 24px;
+  padding-top: 17px;
+  cursor: pointer;
+  &:hover {
+    color: var(--main-color);
+  }
+}
+
+.fontBlockMono {
+  color: var(--fontswitcher-text);
+  font-family: "Space Mono", normal;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px; /* 133.333% */
+  cursor: pointer;
+  padding: 17px 0 17px 24px;
+  &:hover {
+    color: var(--main-color);
+  }
+}

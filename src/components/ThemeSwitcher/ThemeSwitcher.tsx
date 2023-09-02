@@ -1,20 +1,27 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./ThemeSwitcher.module.scss";
 import { ReactComponent as MoonIcon } from "assets/images/icon-moon.svg";
 
 export const ThemeSwitcher = () => {
-  const [isDark, setDark] = useState(false);
+  const [isDark, setDark] = useState(localStorage.getItem("theme") === "dark");
 
   useEffect(() => {
-    document.body.setAttribute("data-theme", isDark ? "dark" : "light");
+    const currentTheme = isDark ? "dark" : "light";
+    document.body.setAttribute("data-theme", currentTheme);
+    localStorage.setItem("theme", currentTheme);
   }, [isDark]);
+
+  const toggleDarkMode = () => {
+    setDark(!isDark);
+  };
 
   return (
     <label className={styles.themeSwitcher}>
       <input
         type="checkbox"
         className={styles.input}
-        onClick={() => setDark(!isDark)}
+        checked={isDark}
+        onChange={toggleDarkMode}
       />
       <span className={styles.slider}></span>
       <MoonIcon className={styles.icon} />
