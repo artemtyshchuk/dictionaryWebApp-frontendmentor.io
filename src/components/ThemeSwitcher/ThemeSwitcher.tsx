@@ -16,7 +16,7 @@ export const ThemeSwitcher = () => {
   };
 
   return (
-    <label className={styles.themeSwitcher}>
+    (<label className={styles.themeSwitcher}>
       <input
         type="checkbox"
         className={styles.input}
@@ -25,6 +25,6 @@ export const ThemeSwitcher = () => {
       />
       <span className={styles.slider}></span>
       <MoonIcon className={styles.icon} />
-    </label>
+    </label>)
   );
 };
