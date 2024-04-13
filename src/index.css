@@ -33,10 +33,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--white);
+  transition: background-color 0.3s ease;
 }
 
 body[data-theme="dark"] {
   background-color: var(--black);
+  transition: background-color 0.3s ease;
 }
 
 a {
